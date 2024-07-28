@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'DevZone',
       theme: ThemeData(
+        brightness: Brightness.dark,
+        colorSchemeSeed: Colors.blue,
+        fontFamily: 'Poppins',
         useMaterial3: true,
       ),
       home: const Scaffold(),
