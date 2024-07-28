@@ -1,3 +1,5 @@
+import 'package:dev_zone/core/constants/colors.dart';
+import 'package:dev_zone/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'DevZone',
       theme: ThemeData(
         brightness: Brightness.dark,
-        colorSchemeSeed: Colors.blue,
-        fontFamily: 'Poppins',
+        colorSchemeSeed: kPrimaryColor,
+        fontFamily: kFontFamily,
         useMaterial3: true,
       ),
       home: const Scaffold(),
