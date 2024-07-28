@@ -1,3 +1,4 @@
+import 'package:dev_zone/core/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class BooksView extends StatelessWidget {
@@ -6,7 +7,11 @@ class BooksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          kAppName,
+        ),
+      ),
     );
   }
 }
