@@ -1,5 +1,6 @@
 import 'package:dev_zone/core/constants/colors.dart';
 import 'package:dev_zone/core/constants/constants.dart';
+import 'package:dev_zone/features/home/presentation/views/books_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: kFontFamily,
         useMaterial3: true,
       ),
-      home: const Scaffold(),
+      home: const BooksView(),
     );
   }
 }
