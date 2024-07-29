@@ -1,6 +1,6 @@
 import 'package:dev_zone/core/constants/styles.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
-import 'package:dev_zone/features/home/presentation/widgets/featured_list_view.dart';
+import 'package:dev_zone/features/home/presentation/widgets/book_image_list_view.dart';
 import 'package:dev_zone/features/home/presentation/widgets/newest_books_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class BooksViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: SizedBox(
             height: context.getDeviceHeight() * 0.25,
-            child: const FeaturedListView(),
+            child: const BookImageListView(),
           ),
         ),
         const SliverToBoxAdapter(

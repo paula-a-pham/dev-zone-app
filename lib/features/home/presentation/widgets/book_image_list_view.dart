@@ -2,8 +2,8 @@ import 'package:dev_zone/core/constants/constants.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedListView extends StatelessWidget {
-  const FeaturedListView({
+class BookImageListView extends StatelessWidget {
+  const BookImageListView({
     super.key,
   });
 

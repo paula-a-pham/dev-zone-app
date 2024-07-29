@@ -1,3 +1,4 @@
+import 'package:dev_zone/features/home/presentation/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
@@ -7,6 +8,7 @@ class BookDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: const BookDetailsViewBody(),
     );
   }
 }
