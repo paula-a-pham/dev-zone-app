@@ -10,7 +10,7 @@ class NewestBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return SliverList.separated(
       itemBuilder: (context, index) => SizedBox(
         height: context.getDeviceHeight() * 0.2,
         child: const NewestBooksItem(
@@ -24,8 +24,6 @@ class NewestBooksListView extends StatelessWidget {
         height: 15.0,
       ),
       itemCount: 10,
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      physics: const BouncingScrollPhysics(),
     );
   }
 }
