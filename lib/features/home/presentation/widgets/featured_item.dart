@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dev_zone/core/utils/extensions/device_details.dart';
 import 'package:dev_zone/features/home/presentation/widgets/featured_item_error.dart';
 import 'package:flutter/material.dart';
 
