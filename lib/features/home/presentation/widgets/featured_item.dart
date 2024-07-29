@@ -1,4 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dev_zone/core/utils/extensions/device_details.dart';
+import 'package:dev_zone/features/home/presentation/widgets/featured_item_error.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedItem extends StatelessWidget {
@@ -16,7 +18,7 @@ class FeaturedItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
         child: CachedNetworkImage(
           imageUrl: imageUrl,
-          errorWidget: (context, url, error) => Container(),
+          errorWidget: (context, url, error) => const FeaturedItemError(),
           fit: BoxFit.cover,
           repeat: ImageRepeat.noRepeat,
         ),
