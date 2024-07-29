@@ -1,5 +1,5 @@
 import 'package:dev_zone/core/constants/constants.dart';
-import 'package:dev_zone/features/home/presentation/widgets/featured_item.dart';
+import 'package:dev_zone/features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListView extends StatelessWidget {
@@ -10,7 +10,7 @@ class FeaturedListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemBuilder: (context, index) => const FeaturedItem(imageUrl: kAppName),
+      itemBuilder: (context, index) => const BookImage(imageUrl: kAppName),
       separatorBuilder: (context, index) => const SizedBox(
         width: 15.0,
       ),

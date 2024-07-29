@@ -2,8 +2,8 @@ import 'package:dev_zone/core/constants/colors.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedItemError extends StatelessWidget {
-  const FeaturedItemError({
+class BookImageError extends StatelessWidget {
+  const BookImageError({
     super.key,
   });
 

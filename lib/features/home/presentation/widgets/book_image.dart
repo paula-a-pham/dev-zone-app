@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dev_zone/features/home/presentation/widgets/featured_item_error.dart';
+import 'package:dev_zone/features/home/presentation/widgets/book_image_error.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedItem extends StatelessWidget {
+class BookImage extends StatelessWidget {
   final String imageUrl;
-  const FeaturedItem({
+  const BookImage({
     super.key,
     required this.imageUrl,
   });
@@ -17,7 +17,7 @@ class FeaturedItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
         child: CachedNetworkImage(
           imageUrl: imageUrl,
-          errorWidget: (context, url, error) => const FeaturedItemError(),
+          errorWidget: (context, url, error) => const BookImageError(),
           fit: BoxFit.cover,
           repeat: ImageRepeat.noRepeat,
         ),
