@@ -13,7 +13,7 @@ class DioHelper {
     );
   }
 
-  static Future<Response> getNews(
+  static Future<Response> getData(
       {required String endPoint,
       required Map<String, dynamic> queryParameters}) async {
     return await dio!.get(endPoint, queryParameters: queryParameters);

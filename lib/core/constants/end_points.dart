@@ -1,1 +1,2 @@
-const String kBaseUrl = 'https://www.googleapis.com/books/v1/';
+const kBaseUrl = 'https://www.googleapis.com/books/v1/';
+const kVolumes = 'volumes';
