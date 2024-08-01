@@ -1,12 +1,20 @@
 import 'package:dev_zone/core/constants/colors.dart';
 import 'package:dev_zone/core/constants/constants.dart';
 import 'package:dev_zone/core/constants/styles.dart';
+import 'package:dev_zone/core/service/service_locator.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
+import 'package:dev_zone/core/widgets/error_message.dart';
+import 'package:dev_zone/core/widgets/loading_indicator.dart';
 import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
 import 'package:dev_zone/features/home/data/models/book_model/item.dart';
+import 'package:dev_zone/features/home/data/repos/home_repo_implementation.dart';
+import 'package:dev_zone/features/home/presentation/manager/related_books_cubit/related_books_cubit.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_details_interaction.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_image.dart';
+import 'package:dev_zone/features/home/presentation/widgets/book_image_list_view.dart';
+import 'package:dev_zone/features/home/presentation/widgets/related_books_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   final Item? book;
@@ -84,10 +92,13 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          SizedBox(
-            height: context.getDeviceHeight() * 0.2,
-            //child: const BookImageListView(),
-            child: const Icon(Icons.error_outline_rounded),
+          BlocProvider(
+            create: (context) =>
+                RelatedBooksCubit(getIt.get<HomeRepoImplementation>())
+                  ..getRelatedBook(
+                      category:
+                          book?.volumeInfo?.categories?[0] ?? 'Programming'),
+            child: RelatedBooksListView(),
           ),
         ],
       ),
