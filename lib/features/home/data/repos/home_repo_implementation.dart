@@ -25,9 +25,21 @@ class HomeRepoImplementation extends HomeRepo {
   }
 
   @override
-  Future<Either<ApiFailure, BookModel>> getNewestBooks() {
-    // TODO: implement getNewestBooks
-    throw UnimplementedError();
+  Future<Either<ApiFailure, BookModel>> getNewestBooks() async {
+    try {
+      var response =
+          await DioHelper.getData(endPoint: kVolumes, queryParameters: {
+        'q': 'Programming',
+        'filter': 'free-ebooks',
+        'orderBy': 'newest',
+      });
+      return right(BookModel.fromJson(response.data));
+    } catch (error) {
+      if (error is DioException) {
+        return left(ServerFailure.fromDioError(error));
+      }
+      return left(ServerFailure(errorMessage: error.toString()));
+    }
   }
 
   @override
