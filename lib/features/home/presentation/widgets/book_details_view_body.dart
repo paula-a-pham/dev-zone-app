@@ -73,11 +73,7 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: BookDetailsInteraction(
-              onTap: () {
-                UrlHelper.openUrl(
-                    url: book?.volumeInfo?.previewLink ??
-                        'https://www.google.com/');
-              },
+             book: book,
             ),
           ),
           const SizedBox(

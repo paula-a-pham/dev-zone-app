@@ -1,12 +1,15 @@
 import 'package:dev_zone/core/constants/colors.dart';
+import 'package:dev_zone/core/utils/functions/book_status.dart';
+import 'package:dev_zone/core/utils/helpers/url_helper.dart';
+import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsInteraction extends StatelessWidget {
-  final VoidCallback onTap;
+  final Item? book;
   const BookDetailsInteraction({
     super.key,
-    required this.onTap,
+    this.book,
   });
 
   @override
@@ -24,9 +27,13 @@ class BookDetailsInteraction extends StatelessWidget {
         ),
         Expanded(
           child: CustomButton(
-            onTap: onTap,
+            onTap: () {
+              UrlHelper.openUrl(
+                  url: book?.volumeInfo?.previewLink ??
+                      'https://www.google.com/');
+            },
             buttonColor: kRoyalOrange,
-            text: 'Preview',
+            text: getBookStatus(book: book),
             bottomRightRadius: 15.0,
             topRightRadius: 15.0,
             textColor: Colors.white,
