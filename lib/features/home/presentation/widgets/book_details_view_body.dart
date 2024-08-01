@@ -82,7 +82,8 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           SizedBox(
             height: context.getDeviceHeight() * 0.2,
-            child: const BookImageListView(),
+            //child: const BookImageListView(),
+            child: const Icon(Icons.error_outline_rounded),
           ),
         ],
       ),
