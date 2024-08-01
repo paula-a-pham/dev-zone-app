@@ -15,6 +15,7 @@ import 'package:dev_zone/features/home/presentation/widgets/book_image_list_view
 import 'package:dev_zone/features/home/presentation/widgets/related_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   final Item? book;
@@ -71,7 +72,13 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: BookDetailsInteraction(
-              onTap: () {},
+              onTap: () async {
+                Uri url = Uri.parse(
+                    book?.volumeInfo?.previewLink ?? 'https://www.google.com/');
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                }
+              },
             ),
           ),
           const SizedBox(
