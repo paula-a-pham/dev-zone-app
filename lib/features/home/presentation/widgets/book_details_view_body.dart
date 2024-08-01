@@ -3,6 +3,7 @@ import 'package:dev_zone/core/constants/constants.dart';
 import 'package:dev_zone/core/constants/styles.dart';
 import 'package:dev_zone/core/service/service_locator.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
+import 'package:dev_zone/core/utils/helpers/url_helper.dart';
 import 'package:dev_zone/core/widgets/error_message.dart';
 import 'package:dev_zone/core/widgets/loading_indicator.dart';
 import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
@@ -72,12 +73,10 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: BookDetailsInteraction(
-              onTap: () async {
-                Uri url = Uri.parse(
-                    book?.volumeInfo?.previewLink ?? 'https://www.google.com/');
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url);
-                }
+              onTap: () {
+                UrlHelper.openUrl(
+                    url: book?.volumeInfo?.previewLink ??
+                        'https://www.google.com/');
               },
             ),
           ),
