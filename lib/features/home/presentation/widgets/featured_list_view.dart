@@ -16,16 +16,19 @@ class FeaturedListView extends StatelessWidget {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
-          return SizedBox(
-            height: context.getDeviceHeight() * 0.25,
-            child: BookImageListView(
-              books: state.books,
+          return SliverToBoxAdapter(
+            child: SizedBox(
+              height: context.getDeviceHeight() * 0.25,
+              child: BookImageListView(
+                books: state.books,
+              ),
             ),
           );
         } else if (state is FeaturedBooksFailure) {
-          return ErrorMessage(errorMessage: state.errorMessage);
+          return SliverToBoxAdapter(
+              child: ErrorMessage(errorMessage: state.errorMessage));
         } else {
-          return const LoadingIndicator();
+          return const SliverToBoxAdapter(child: LoadingIndicator());
         }
       },
     );

@@ -6,25 +6,25 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'featured_books_state.dart';
+part 'newest_books_state.dart';
 
-class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+class NewestBooksCubit extends Cubit<NewestBooksState> {
+  NewestBooksCubit(this.homeRepo) : super(NewestBooksInitial());
 
   final HomeRepo homeRepo;
 
-  static FeaturedBooksCubit getFeaturedBooksCubit(BuildContext context) =>
+  static NewestBooksCubit getNewestBooksCubit(BuildContext context) =>
       BlocProvider.of(context);
 
-  Future<void> getFeaturedBooks() async {
-    emit(FeaturedBooksLoading());
-    Either<ApiFailure, BookModel> result = await homeRepo.getFeaturedBooks();
+  Future<void> getNewestBooks() async {
+    emit(NewestBooksLoading());
+    Either<ApiFailure, BookModel> result = await homeRepo.getNewestBooks();
     result.fold(
       (apiFailure) {
-        emit(FeaturedBooksFailure(errorMessage: apiFailure.errorMessage));
+        emit(NewestBooksFailure(errorMessage: apiFailure.errorMessage));
       },
       (bookModel) {
-        emit(FeaturedBooksSuccess(books: bookModel));
+        emit(NewestBooksSuccess(books: bookModel));
       },
     );
   }
