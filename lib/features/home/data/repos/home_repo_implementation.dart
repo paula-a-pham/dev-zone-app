@@ -43,8 +43,21 @@ class HomeRepoImplementation extends HomeRepo {
   }
 
   @override
-  Future<Either<ApiFailure, BookModel>> getRelatedBooks() {
-    // TODO: implement getRelatedBooks
-    throw UnimplementedError();
+  Future<Either<ApiFailure, BookModel>> getRelatedBooks(
+      {required String category}) async {
+    try {
+      var response =
+          await DioHelper.getData(endPoint: kVolumes, queryParameters: {
+        'q': category,
+        'filter': 'free-ebooks',
+        'orderBy': 'relevance',
+      });
+      return right(BookModel.fromJson(response.data));
+    } catch (error) {
+      if (error is DioException) {
+        return left(ServerFailure.fromDioError(error));
+      }
+      return left(ServerFailure(errorMessage: error.toString()));
+    }
   }
 }
