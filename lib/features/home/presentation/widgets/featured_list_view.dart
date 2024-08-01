@@ -1,4 +1,6 @@
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
+import 'package:dev_zone/core/widgets/error_message.dart';
+import 'package:dev_zone/core/widgets/loading_indicator.dart';
 import 'package:dev_zone/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_image_list_view.dart';
 import 'package:flutter/material.dart';
@@ -21,16 +23,9 @@ class FeaturedListView extends StatelessWidget {
             ),
           );
         } else if (state is FeaturedBooksFailure) {
-          return Center(
-            child: Text(
-              state.errorMessage,
-              textAlign: TextAlign.center,
-            ),
-          );
+          return ErrorMessage(errorMessage: state.errorMessage);
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const LoadingIndicator();
         }
       },
     );
