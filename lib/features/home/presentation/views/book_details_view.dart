@@ -1,4 +1,3 @@
-import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
 import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
