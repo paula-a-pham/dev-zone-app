@@ -2,13 +2,17 @@ import 'package:dev_zone/core/constants/colors.dart';
 import 'package:dev_zone/core/constants/constants.dart';
 import 'package:dev_zone/core/constants/styles.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
+import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
+import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_details_interaction.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
+  final Item? book;
   const BookDetailsViewBody({
     super.key,
+    required this.book,
   });
 
   @override
@@ -20,17 +24,17 @@ class BookDetailsViewBody extends StatelessWidget {
         children: <Widget>[
           SizedBox(
             height: context.getDeviceHeight() * 0.3,
-            child: const BookImage(
-              imageUrl: kAppName,
+            child: BookImage(
+              imageUrl: book?.volumeInfo?.imageLinks?.thumbnail ?? kAppName,
             ),
           ),
           const SizedBox(
             height: 30.0,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: Text(
-              kAppName,
+              book?.volumeInfo?.title ?? 'There is no title for this book.',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: kTextStyle18,
@@ -43,7 +47,8 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Text(
-              kAppName,
+              book?.volumeInfo?.authors?[0] ??
+                  'There is no authors for this book.',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: kTextStyle14.copyWith(

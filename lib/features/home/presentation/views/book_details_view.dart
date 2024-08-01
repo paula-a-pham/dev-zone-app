@@ -1,14 +1,19 @@
+import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
+import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
+  final Item? book;
+  const BookDetailsView({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const BookDetailsViewBody(),
+      body: BookDetailsViewBody(
+        book: book,
+      ),
     );
   }
 }
