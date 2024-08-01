@@ -1,11 +1,13 @@
 import 'package:dev_zone/core/constants/colors.dart';
 import 'package:dev_zone/core/constants/constants.dart';
 import 'package:dev_zone/core/service/api/dio_helper.dart';
+import 'package:dev_zone/core/service/service_locator.dart';
 import 'package:dev_zone/features/home/presentation/views/books_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   DioHelper.dioInit();
+  serviceLocatorSetup();
   runApp(const MyApp());
 }
 
