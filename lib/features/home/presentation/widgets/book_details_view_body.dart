@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/styles.dart';
+import 'package:dev_zone/core/constants/app_styles.dart';
 import 'package:dev_zone/core/service/service_locator.dart';
 import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/data/repos/home_repo_implementation.dart';
@@ -34,7 +34,7 @@ class BookDetailsViewBody extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'You may also like',
-                style: kTextStyle14.copyWith(
+                style: AppStyles.kTextStyle14.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
               ),

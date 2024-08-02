@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/constants.dart';
+import 'package:dev_zone/core/constants/app_strings.dart';
 import 'package:dev_zone/core/utils/extensions/app_navigation.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
 import 'package:dev_zone/core/widgets/error_message.dart';
@@ -28,7 +28,7 @@ class NewestBooksListView extends StatelessWidget {
                 child: NewestBooksItem(
                   imageUrl: state.books.items?[index].volumeInfo?.imageLinks
                           ?.thumbnail ??
-                      kAppName,
+                      AppStrings.kAppName,
                   title: state.books.items?[index].volumeInfo?.title ??
                       'There is no title for this book.',
                   author: state.books.items?[index].volumeInfo?.authors?[0] ??

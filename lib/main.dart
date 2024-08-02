@@ -1,5 +1,5 @@
-import 'package:dev_zone/core/constants/colors.dart';
-import 'package:dev_zone/core/constants/constants.dart';
+import 'package:dev_zone/core/constants/app_colors.dart';
+import 'package:dev_zone/core/constants/app_strings.dart';
 import 'package:dev_zone/core/service/api/dio_helper.dart';
 import 'package:dev_zone/core/service/service_locator.dart';
 import 'package:dev_zone/features/home/data/repos/home_repo_implementation.dart';
@@ -38,11 +38,11 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: kAppName,
+        title: AppStrings.kAppName,
         theme: ThemeData(
           brightness: Brightness.dark,
-          colorSchemeSeed: kPrimaryColor,
-          fontFamily: kFontFamily,
+          colorSchemeSeed: AppColors.kPrimaryColor,
+          fontFamily: AppStrings.kFontFamily,
           useMaterial3: true,
         ),
         home: const BooksView(),

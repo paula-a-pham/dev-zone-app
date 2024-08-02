@@ -1,5 +1,5 @@
-import 'package:dev_zone/core/constants/colors.dart';
-import 'package:dev_zone/core/constants/styles.dart';
+import 'package:dev_zone/core/constants/app_colors.dart';
+import 'package:dev_zone/core/constants/app_styles.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +35,7 @@ class NewestBooksItem extends StatelessWidget {
                 title,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-                style: kTextStyle18,
+                style: AppStyles.kTextStyle18,
               ),
               const SizedBox(
                 height: 5.0,
@@ -44,14 +44,15 @@ class NewestBooksItem extends StatelessWidget {
                 author,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: kTextStyle14.copyWith(color: kCloudCover),
+                style: AppStyles.kTextStyle14
+                    .copyWith(color: AppColors.kCloudCover),
               ),
               const SizedBox(
                 height: 5.0,
               ),
               Text(
                 'Free',
-                style: kTextStyle18.copyWith(
+                style: AppStyles.kTextStyle18.copyWith(
                   fontSize: 22.0,
                 ),
               ),

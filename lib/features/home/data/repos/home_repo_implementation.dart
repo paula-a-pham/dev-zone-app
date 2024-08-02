@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:dev_zone/core/constants/end_points.dart';
+import 'package:dev_zone/core/constants/app_end_points.dart';
 import 'package:dev_zone/core/errors/api_failure.dart';
 import 'package:dev_zone/core/service/api/dio_helper.dart';
 import 'package:dev_zone/features/home/data/models/book_model/book_model.dart';
@@ -10,11 +10,12 @@ class HomeRepoImplementation extends HomeRepo {
   @override
   Future<Either<ApiFailure, BookModel>> getFeaturedBooks() async {
     try {
-      var response =
-          await DioHelper.getData(endPoint: kVolumes, queryParameters: {
-        'q': 'Programming',
-        'filter': 'free-ebooks',
-      });
+      var response = await DioHelper.getData(
+          endPoint: AppEndPoints.kVolumes,
+          queryParameters: {
+            'q': 'Programming',
+            'filter': 'free-ebooks',
+          });
       return right(BookModel.fromJson(response.data));
     } catch (error) {
       if (error is DioException) {
@@ -27,12 +28,13 @@ class HomeRepoImplementation extends HomeRepo {
   @override
   Future<Either<ApiFailure, BookModel>> getNewestBooks() async {
     try {
-      var response =
-          await DioHelper.getData(endPoint: kVolumes, queryParameters: {
-        'q': 'Programming',
-        'filter': 'free-ebooks',
-        'orderBy': 'newest',
-      });
+      var response = await DioHelper.getData(
+          endPoint: AppEndPoints.kVolumes,
+          queryParameters: {
+            'q': 'Programming',
+            'filter': 'free-ebooks',
+            'orderBy': 'newest',
+          });
       return right(BookModel.fromJson(response.data));
     } catch (error) {
       if (error is DioException) {
@@ -46,12 +48,13 @@ class HomeRepoImplementation extends HomeRepo {
   Future<Either<ApiFailure, BookModel>> getRelatedBooks(
       {required String category}) async {
     try {
-      var response =
-          await DioHelper.getData(endPoint: kVolumes, queryParameters: {
-        'q': category,
-        'filter': 'free-ebooks',
-        'orderBy': 'relevance',
-      });
+      var response = await DioHelper.getData(
+          endPoint: AppEndPoints.kVolumes,
+          queryParameters: {
+            'q': category,
+            'filter': 'free-ebooks',
+            'orderBy': 'relevance',
+          });
       return right(BookModel.fromJson(response.data));
     } catch (error) {
       if (error is DioException) {

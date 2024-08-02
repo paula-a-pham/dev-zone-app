@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/colors.dart';
+import 'package:dev_zone/core/constants/app_colors.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +10,10 @@ class BookImageError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kBlackOfNight,
+      color: AppColors.kBlackOfNight,
       child: Icon(
         Icons.error_outline_rounded,
-        color: kBrightGrey,
+        color: AppColors.kBrightGrey,
         size: context.getDeviceWidth() * 0.1,
       ),
     );

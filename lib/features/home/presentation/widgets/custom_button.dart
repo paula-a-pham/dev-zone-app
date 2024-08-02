@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/styles.dart';
+import 'package:dev_zone/core/constants/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -40,7 +40,7 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: kTextStyle18.copyWith(color: textColor),
+          style: AppStyles.kTextStyle18.copyWith(color: textColor),
         ),
       ),
     );

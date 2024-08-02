@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/colors.dart';
+import 'package:dev_zone/core/constants/app_colors.dart';
 import 'package:dev_zone/core/utils/functions/book_status.dart';
 import 'package:dev_zone/core/utils/helpers/url_helper.dart';
 import 'package:dev_zone/features/home/data/models/book_model/item.dart';
@@ -22,7 +22,7 @@ class BookDetailsInteraction extends StatelessWidget {
             text: 'Free',
             bottomLeftRadius: 15.0,
             topLeftRadius: 15.0,
-            textColor: kBlackOfNight,
+            textColor: AppColors.kBlackOfNight,
           ),
         ),
         Expanded(
@@ -32,7 +32,7 @@ class BookDetailsInteraction extends StatelessWidget {
                   url: book?.volumeInfo?.previewLink ??
                       'https://www.google.com/');
             },
-            buttonColor: kRoyalOrange,
+            buttonColor: AppColors.kRoyalOrange,
             text: getBookStatus(book: book),
             bottomRightRadius: 15.0,
             topRightRadius: 15.0,

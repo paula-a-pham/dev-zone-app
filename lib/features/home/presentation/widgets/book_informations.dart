@@ -1,6 +1,6 @@
-import 'package:dev_zone/core/constants/colors.dart';
-import 'package:dev_zone/core/constants/constants.dart';
-import 'package:dev_zone/core/constants/styles.dart';
+import 'package:dev_zone/core/constants/app_colors.dart';
+import 'package:dev_zone/core/constants/app_strings.dart';
+import 'package:dev_zone/core/constants/app_styles.dart';
 import 'package:dev_zone/core/utils/extensions/device_details.dart';
 import 'package:dev_zone/features/home/data/models/book_model/item.dart';
 import 'package:dev_zone/features/home/presentation/widgets/book_details_interaction.dart';
@@ -21,7 +21,8 @@ class BookInformations extends StatelessWidget {
         SizedBox(
           height: context.getDeviceHeight() * 0.3,
           child: BookImage(
-            imageUrl: book?.volumeInfo?.imageLinks?.thumbnail ?? kAppName,
+            imageUrl:
+                book?.volumeInfo?.imageLinks?.thumbnail ?? AppStrings.kAppName,
           ),
         ),
         const SizedBox(
@@ -33,7 +34,7 @@ class BookInformations extends StatelessWidget {
             book?.volumeInfo?.title ?? 'There is no title for this book.',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: kTextStyle18,
+            style: AppStyles.kTextStyle18,
             textAlign: TextAlign.center,
           ),
         ),
@@ -47,9 +48,9 @@ class BookInformations extends StatelessWidget {
                 'There is no authors for this book.',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: kTextStyle14.copyWith(
+            style: AppStyles.kTextStyle14.copyWith(
               fontSize: 16,
-              color: kCloudCover,
+              color: AppColors.kCloudCover,
             ),
           ),
         ),

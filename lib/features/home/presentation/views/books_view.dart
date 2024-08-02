@@ -1,4 +1,4 @@
-import 'package:dev_zone/core/constants/constants.dart';
+import 'package:dev_zone/core/constants/app_strings.dart';
 import 'package:dev_zone/features/home/presentation/widgets/books_view_body.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class BooksView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          kAppName,
+          AppStrings.kAppName,
         ),
         titleSpacing: 15.0,
       ),
