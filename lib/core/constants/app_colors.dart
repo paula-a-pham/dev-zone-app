@@ -6,4 +6,5 @@ abstract class AppColors {
   static const kBrightGrey = Color(0xffEBEDF0);
   static const kCloudCover = Color(0xffB0B3BA);
   static const kRoyalOrange = Color(0xffF49E4E);
+  static const kDarkBlack = Color(0xff111418);
 }

@@ -1,7 +1,7 @@
-import 'package:dev_zone/core/constants/app_colors.dart';
 import 'package:dev_zone/core/constants/app_strings.dart';
 import 'package:dev_zone/core/service/api/dio_helper.dart';
 import 'package:dev_zone/core/service/service_locator.dart';
+import 'package:dev_zone/core/theme/app_theme.dart';
 import 'package:dev_zone/features/home/data/repos/home_repo_implementation.dart';
 import 'package:dev_zone/features/home/presentation/manager/bloc_observer.dart';
 import 'package:dev_zone/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -39,12 +39,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppStrings.kAppName,
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          colorSchemeSeed: AppColors.kPrimaryColor,
-          fontFamily: AppStrings.kFontFamily,
-          useMaterial3: true,
-        ),
+        theme: appTheme,
         home: const BooksView(),
       ),
     );
